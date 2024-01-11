@@ -1,0 +1,33 @@
+.header-wrapper{
+    padding: 6px;
+    background-color: #eee;
+}
+
+.tile-item{
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    font-family:'Quicksand', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.tile-item:nth-child(1){
+    background-image: url('../images/logo.png');
+}
+
+.tile-item:nth-child(3){
+    background-image: url('../images/flags/uah.svg');
+}
+
+.tile-item:nth-child(5){
+    background-image: url('../images/flags/uah.svg');
+}
+
+.tile-item:nth-child(7){
+    background-image: url('../images/flags/usd.svg');
+}
+
+.tile-item:nth-child(8){
+    background-image: url('../images/flags/eur.svg');
+}

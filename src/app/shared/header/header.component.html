@@ -1,8 +1,10 @@
-<mat-grid-list cols="10" rowHeight="50px" gutterSize="0px" (window:resize)="renderGrid()">
+<div class="header-wrapper">
+      <mat-grid-list class="grid-list" cols="10" rowHeight="50px" gutterSize="6px" (window:resize)="renderGrid()">
 
-      <mat-grid-tile class="tile-item" *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">{{tile.text}}</mat-grid-tile>
-    
-  </mat-grid-list>
+            <mat-grid-tile class="tile-item" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+                  [style.background]="tile.color">
+                  {{tile.data}}
+            </mat-grid-tile>
+
+      </mat-grid-list>
+</div>

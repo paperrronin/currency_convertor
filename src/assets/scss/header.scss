@@ -27,7 +27,7 @@
 
 @-webkit-keyframes color-change-usd {
     0% {
-      background: #e7bfc4;
+      background: #e19ea6;
     }
     100% {
       background: #df8f99;
@@ -35,7 +35,7 @@
   }
   @keyframes color-change-usd {
     0% {
-      background: #e7bfc4;
+      background: #e19ea6;
     }
     100% {
       background: #df8f99;
@@ -44,7 +44,7 @@
 
   @-webkit-keyframes color-change-eur {
     0% {
-      background: #b4c1df;
+      background: #8ca3d4;
     }
     100% {
       background: #7b96ce;
@@ -52,7 +52,7 @@
   }
   @keyframes color-change-eur {
     0% {
-      background: #b4c1df;
+      background: #8ca3d4;
     }
     100% {
       background: #7b96ce;
@@ -87,10 +87,11 @@
 }
 
 .tile-item:nth-child(4){
-    -webkit-animation: color-change-usd 4s linear infinite alternate both;
-	        animation: color-change-usd 4s linear infinite alternate both;
+    -webkit-animation: color-change-usd 2s linear infinite alternate both;
+	        animation: color-change-usd 2s linear infinite alternate both;
 
             .data_cur{
+                color: #eee;
                 -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
                 animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
             }
@@ -102,9 +103,10 @@
 }
 
 .tile-item:nth-child(6){
-    -webkit-animation: color-change-eur 4s linear infinite alternate both;
-	        animation: color-change-eur 4s linear infinite alternate both;
+    -webkit-animation: color-change-eur 2s linear infinite alternate both;
+	        animation: color-change-eur 2s linear infinite alternate both;
     .data_cur{
+        color: #eee;
         -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
         animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }

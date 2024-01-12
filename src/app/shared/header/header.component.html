@@ -3,7 +3,7 @@
 
             <mat-grid-tile class="tile-item" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
                   [style.background]="tile.color">
-                  {{tile.data}}
+                  <span class="data_cur">{{tile.data}}</span>
             </mat-grid-tile>
 
       </mat-grid-list>

@@ -1,3 +1,66 @@
+
+ @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+@-webkit-keyframes color-change-usd {
+    0% {
+      background: #e7bfc4;
+    }
+    100% {
+      background: #df8f99;
+    }
+  }
+  @keyframes color-change-usd {
+    0% {
+      background: #e7bfc4;
+    }
+    100% {
+      background: #df8f99;
+    }
+  }
+
+  @-webkit-keyframes color-change-eur {
+    0% {
+      background: #b4c1df;
+    }
+    100% {
+      background: #7b96ce;
+    }
+  }
+  @keyframes color-change-eur {
+    0% {
+      background: #b4c1df;
+    }
+    100% {
+      background: #7b96ce;
+    }
+  }
+  
+  
+  
 .header-wrapper{
     padding: 8px 12px;
     background-color: #eee;
@@ -10,6 +73,8 @@
     font-family:'Quicksand', sans-serif;
     font-weight: 300;
     font-size: 24px;
+
+    
 }
 
 .tile-item:nth-child(1){
@@ -18,10 +83,31 @@
 
 .tile-item:nth-child(3){
     background-image: url('../images/flags/uah.svg');
+    
+}
+
+.tile-item:nth-child(4){
+    -webkit-animation: color-change-usd 4s linear infinite alternate both;
+	        animation: color-change-usd 4s linear infinite alternate both;
+
+            .data_cur{
+                -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            }
+    
 }
 
 .tile-item:nth-child(5){
     background-image: url('../images/flags/uah.svg');
+}
+
+.tile-item:nth-child(6){
+    -webkit-animation: color-change-eur 4s linear infinite alternate both;
+	        animation: color-change-eur 4s linear infinite alternate both;
+    .data_cur{
+        -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
 }
 
 .tile-item:nth-child(7){

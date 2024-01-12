@@ -1,5 +1,5 @@
 <div class="header-wrapper">
-      <mat-grid-list class="grid-list" cols="20" rowHeight="50px" gutterSize="6px" (window:resize)="renderGrid()">
+      <mat-grid-list class="grid-list" cols="20" rowHeight="7vh" gutterSize="6px" (window:resize)="renderGrid()">
 
             <mat-grid-tile class="tile-item" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
                   [style.background]="tile.color">

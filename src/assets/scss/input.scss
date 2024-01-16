@@ -19,3 +19,18 @@
     display: none !important;
 }
 
+
+.cur-input input::-webkit-inner-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.cur-select-field .mat-mdc-text-field-wrapper{
+    border-radius: 0px !important;
+}
+
+mat-select-trigger{
+    display: flex;
+}
+
+

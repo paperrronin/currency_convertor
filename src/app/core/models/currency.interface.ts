@@ -1,0 +1,53 @@
+export interface Currency {
+    name: string;
+    icon:string;
+    path:string;
+  }
+
+  export const currency:Currency[] = [
+    {
+        name:"UAH",
+        icon:"UAHsvg",
+        path:"../../../assets/images/flags/uah.svg"
+    },
+    {
+        name:"USD",
+        icon:"USDsvg",
+        path:"../../../assets/images/flags/usd.svg"
+    },
+    {
+        name:"EUR",
+        icon:"EURsvg",
+        path:"../../../assets/images/flags/eur.svg"
+    },
+    {
+        name:"CAD",
+        icon:"CADsvg",
+        path:"../../../assets/images/flags/cad.svg"
+    },
+    {
+        name:"CHF",
+        icon:"CHFsvg",
+        path:"../../../assets/images/flags/chf.svg"
+    },
+    {
+        name:"CZK",
+        icon:"CZKsvg",
+        path:"../../../assets/images/flags/czk.svg"
+    },
+    {
+        name:"GBP",
+        icon:"GBPsvg",
+        path:"../../../assets/images/flags/gbp.svg"
+    },
+    {
+        name:"JPY",
+        icon:"JPYsvg",
+        path:"../../../assets/images/flags/jpy.svg"
+    },
+    {
+        name:"PLN",
+        icon:"PLNsvg",
+        path:"../../../assets/images/flags/pln.svg"
+    }
+  ]

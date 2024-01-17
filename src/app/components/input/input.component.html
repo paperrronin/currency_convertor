@@ -6,7 +6,7 @@
                 type="number"
                 maxlength="10"
                 formControlName="inputLeft"
-                (input)="getInputValue()" >
+                (input)="changeLeftInputValue()" >
         </mat-form-field>
 
         <mat-form-field class="cur-select-field">
@@ -30,7 +30,11 @@
     </div>
 
 
-    <button mat-icon-button (click)="swapCurrency(leftForm.controls['selectLeft'].value,rightForm.controls['selectRight'].value)">
+    <button mat-icon-button (click)="swapCurrency(
+        leftForm.controls['selectLeft'].value,
+        rightForm.controls['selectRight'].value,
+        leftForm.controls['inputLeft'].value,
+        rightForm.controls['inputRight'].value)">
         <mat-icon>swap_horiz</mat-icon>
     </button>
 
@@ -41,7 +45,8 @@
             <input matInput 
                 type="number" 
                 maxlength="10"
-                formControlName="inputRight">
+                formControlName="inputRight"
+                (input)="changeRightInputValue()">
         </mat-form-field>
 
         <mat-form-field class="cur-select-field">

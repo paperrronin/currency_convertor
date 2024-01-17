@@ -24,4 +24,14 @@ export class CurrencyService {
       largeTile[5].data = eur.rates['UAH'].toFixed(3)
     });
   }
+
+  public getCurrencyCourse(c1:string, c2:string, amount:number):Observable<any>{
+    let URL:string = `${environment.apiUrlCurrency}convert?from=` + c1 +'&to=' + c2 + '&amount=' + amount.toString()
+    console.log(URL)
+    return this.http
+      .get<any>(URL)
+      .pipe(map(res => {
+        return res.result
+      }))
+  }
 }

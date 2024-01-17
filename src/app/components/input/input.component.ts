@@ -1,6 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser"
 import { currency, Currency } from 'src/app/core/models/currency.interface';
@@ -17,12 +17,14 @@ export class InputComponent implements OnInit{
   public rightSelectedValue:Currency = {
     name:"USD",
     icon:"USDsvg",
-    path:"../../../assets/images/flags/usd.svg"
+    path:"../../../assets/images/flags/usd.svg",
+    disabled:true
   }
   public leftSelectedValue:Currency = {
   name:"UAH",
   icon:"UAHsvg",
-  path:"../../../assets/images/flags/uah.svg"
+  path:"../../../assets/images/flags/uah.svg",
+  disabled:true
   }
 
   customIcons: Array<[string, string]> = [
@@ -51,22 +53,36 @@ export class InputComponent implements OnInit{
     this.currencyList = currency
     this.leftForm = this.formBuilder.group({
       inputLeft: [],
+      selectLeft:[this.leftSelectedValue]
     });
 
     this.rightForm = this.formBuilder.group({
       inputRight: [],
+      selectRight:[this.rightSelectedValue]
     });
+    // this.compareFn()
+
+    console.log(this.rightSelectedValue)
   }
 
   public compareFn(c1: Currency, c2: Currency): boolean {
     return c1 && c2? c1.name === c2.name : c1 === c2;
   }
 
+  public swapCurrency(c1:Currency, c2:Currency){
+    this.leftSelectedValue = c2
+    this.rightSelectedValue = c1
+  }
+
   public changeLeftCur(data:Currency){
     console.log(data)
   }
 
+  public changeRightCur(data:Currency){
+    // console.log(data)
+  }
+
   public getInputValue(){
-    console.log(11)
+    // console.log(11)
   }
 }

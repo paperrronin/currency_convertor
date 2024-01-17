@@ -1,41 +1,68 @@
 <div class="input-container">
-    <div class="left-input input-wrapper" >
-        <mat-form-field  [formGroup]="leftForm" class="cur-input cur-1-input">
+    <div [formGroup]="leftForm" class="left-input input-wrapper">
+        <mat-form-field class="cur-input cur-1-input">
             <mat-label>Enter value</mat-label>
-            <input formControlName="inputLeft" matInput type="number" maxlength="10" (input)="getInputValue()" >
+            <input matInput 
+                type="number"
+                maxlength="10"
+                formControlName="inputLeft"
+                (input)="getInputValue()" >
         </mat-form-field>
 
         <mat-form-field class="cur-select-field">
             <mat-label>select currency</mat-label>
-            <mat-select [(value)]="leftSelectedValue" [compareWith]="compareFn" (selectionChange)="changeLeftCur($event.value)">
-                <mat-select-trigger>
-                    <mat-icon [svgIcon]="leftSelectedValue.icon!"></mat-icon>&nbsp;{{leftSelectedValue.name}}
-                </mat-select-trigger>
-                <mat-option *ngFor="let cur of currencyList" [value]="cur">
-                    <mat-icon [svgIcon]="cur.icon!">
-                    </mat-icon>{{cur.name}}
-                </mat-option>
-            </mat-select>
+            <mat-select 
+                [(value)]="leftSelectedValue" 
+                formControlName="selectLeft" 
+                [compareWith]="compareFn"
+                (selectionChange)="changeLeftCur($event.value)">
+                    <mat-select-trigger>
+                        <mat-icon [svgIcon]="leftSelectedValue.icon!"></mat-icon>&nbsp;{{leftSelectedValue.name}}
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let cur of currencyList" 
+                        [value]="cur"
+                        [disabled]="leftForm.controls['selectLeft'].value === cur || rightForm.controls['selectRight'].value === cur">
+                            <mat-icon [svgIcon]="cur.icon!">
+                            </mat-icon>{{cur.name}}
+                    </mat-option>
+             </mat-select>
         </mat-form-field>
     </div>
-    <div class="right-input input-wrapper">
-        <mat-form-field [formGroup]="rightForm"  class="cur-input cur-2-input">
+
+
+    <button mat-icon-button (click)="swapCurrency(leftForm.controls['selectLeft'].value,rightForm.controls['selectRight'].value)">
+        <mat-icon>swap_horiz</mat-icon>
+    </button>
+
+
+    <div [formGroup]="rightForm" class="right-input input-wrapper">
+        <mat-form-field class="cur-input cur-2-input">
             <mat-label></mat-label>
-            <input formControlName="inputRight" matInput type="number" maxlength="10" >
+            <input matInput 
+                type="number" 
+                maxlength="10"
+                formControlName="inputRight">
         </mat-form-field>
 
         <mat-form-field class="cur-select-field">
             <mat-label>select currency</mat-label>
-            <mat-select [(value)]="rightSelectedValue" [compareWith]="compareFn">
-                <mat-select-trigger>
-                    <mat-icon [svgIcon]="rightSelectedValue.icon!">
-                    </mat-icon>&nbsp;{{rightSelectedValue.name}}
-                </mat-select-trigger>
-                <mat-option *ngFor="let cur of currencyList" [value]="cur">{{cur.name}}
-                    <mat-icon [svgIcon]="cur.icon!">
-                    </mat-icon>
-                </mat-option>
-            </mat-select>
+            <mat-select 
+                [(value)]="rightSelectedValue" 
+                formControlName="selectRight" 
+                [compareWith]="compareFn" 
+                (selectionChange)="changeRightCur($event.value)">
+                    <mat-select-trigger>
+                        <mat-icon [svgIcon]="rightSelectedValue.icon!">
+                        </mat-icon>&nbsp;{{rightSelectedValue.name}}
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let cur of currencyList" 
+                        [value]="cur"
+                        [disabled]="rightForm.controls['selectRight'].value === cur || leftForm.controls['selectLeft'].value === cur">
+                        {{cur.name}}
+                        <mat-icon [svgIcon]="cur.icon!">
+                        </mat-icon>
+                    </mat-option>
+                </mat-select>
         </mat-form-field>
     </div>
 </div>

@@ -2,7 +2,6 @@ export interface Currency {
     name: string;
     icon:string;
     path:string;
-    disabled?:boolean
   }
 
   export const currency:Currency[] = [

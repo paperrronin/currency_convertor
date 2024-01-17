@@ -18,13 +18,11 @@ export class InputComponent implements OnInit{
     name:"USD",
     icon:"USDsvg",
     path:"../../../assets/images/flags/usd.svg",
-    disabled:true
   }
   public leftSelectedValue:Currency = {
   name:"UAH",
   icon:"UAHsvg",
   path:"../../../assets/images/flags/uah.svg",
-  disabled:true
   }
 
   customIcons: Array<[string, string]> = [
@@ -60,9 +58,9 @@ export class InputComponent implements OnInit{
       inputRight: [],
       selectRight:[this.rightSelectedValue]
     });
-    // this.compareFn()
 
-    console.log(this.rightSelectedValue)
+    this.leftForm.controls['selectLeft'].patchValue(this.currencyList[0])
+    this.rightForm.controls['selectRight'].patchValue(this.currencyList[1])
   }
 
   public compareFn(c1: Currency, c2: Currency): boolean {
@@ -75,7 +73,7 @@ export class InputComponent implements OnInit{
   }
 
   public changeLeftCur(data:Currency){
-    console.log(data)
+    // console.log(data)
   }
 
   public changeRightCur(data:Currency){

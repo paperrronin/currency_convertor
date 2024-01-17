@@ -70,11 +70,14 @@ export class InputComponent implements OnInit{
     return c1 && c2? c1.name === c2.name : c1 === c2;
   }
 
-  public swapCurrency(c1Name:Currency, c2Name:Currency, c1Amount:any, c2Amount:any){
-    this.leftSelectedValue = c2Name
-    this.rightSelectedValue = c1Name
-    this.rightForm.controls['inputRight'].setValue(c1Amount)
+  public swapCurrency(c1Amount:any, c2Amount:any){
+    // this.rightForm.controls['inputRight'].setValue(c1Amount)
     this.leftForm.controls['inputLeft'].setValue(c2Amount)
+
+    this.curService.getCurrencyCourse(this.leftSelectedValue.name, this.rightSelectedValue.name, this.leftForm.controls['inputLeft'].getRawValue())
+    .subscribe(res=>{
+      this.rightForm.controls['inputRight'].setValue(res)
+    })
   }
 
   public changeLeftCur(data:Currency){

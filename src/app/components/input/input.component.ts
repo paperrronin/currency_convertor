@@ -59,8 +59,8 @@ export class InputComponent implements OnInit{
       selectRight:[this.rightSelectedValue]
     });
 
-    this.leftForm.controls['selectLeft'].patchValue(this.currencyList[0])
-    this.rightForm.controls['selectRight'].patchValue(this.currencyList[1])
+    this.leftForm.controls['selectLeft'].patchValue(this.currencyList.find(el => el.name == "UAH"))
+    this.rightForm.controls['selectRight'].patchValue(this.currencyList.find(el => el.name == "USD"))
   }
 
   public compareFn(c1: Currency, c2: Currency): boolean {

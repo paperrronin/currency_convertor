@@ -4,7 +4,9 @@
             <mat-label>Enter value</mat-label>
             <input matInput 
                 type="number"
-                maxlength="10"
+                placeholder="0"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="13"
                 formControlName="inputLeft"
                 (input)="changeLeftInputValue()" >
         </mat-form-field>
@@ -42,7 +44,9 @@
             <mat-label></mat-label>
             <input matInput 
                 type="number" 
-                maxlength="10"
+                placeholder="0"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="13"
                 formControlName="inputRight"
                 (input)="changeRightInputValue()">
         </mat-form-field>

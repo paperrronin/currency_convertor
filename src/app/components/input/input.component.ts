@@ -1,4 +1,3 @@
-import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from "@angular/material/icon";
@@ -95,6 +94,9 @@ export class InputComponent implements OnInit{
   }
 
   public changeLeftInputValue(){
+    if(this.leftForm.controls['inputLeft'].value == null){
+      this.rightForm.controls['inputRight'].setValue(0)
+    } else
     this.curService.getCurrencyCourse(this.leftSelectedValue.name, this.rightSelectedValue.name, this.leftForm.controls['inputLeft'].getRawValue())
     .subscribe(res=>{
       this.rightForm.controls['inputRight'].setValue(res)
@@ -102,6 +104,9 @@ export class InputComponent implements OnInit{
   }
 
   public changeRightInputValue(){
+    if(this.rightForm.controls['inputRight'].value == null){
+      this.leftForm.controls['inputLeft'].setValue(0)
+    } else
     this.curService.getCurrencyCourse(this.rightSelectedValue.name, this.leftSelectedValue.name, this.rightForm.controls['inputRight'].getRawValue())
     .subscribe(res=>{
       this.leftForm.controls['inputLeft'].setValue(res)

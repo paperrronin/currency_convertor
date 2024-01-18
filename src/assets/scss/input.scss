@@ -1,6 +1,6 @@
 .input-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 48vh;
     .input-wrapper{
@@ -32,5 +32,18 @@ input.example-right-align::-webkit-inner-spin-button {
 mat-select-trigger{
     display: flex;
 }
+
+
+@media screen and (max-width: 768px) {
+    .input-container{
+        height: 82%;
+        flex-direction: column;
+    } 
+
+    .swap-button{
+        margin: 18px;
+        transform: rotate(90deg);
+    }
+  }
 
 
